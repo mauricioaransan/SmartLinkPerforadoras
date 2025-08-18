@@ -1,0 +1,119 @@
+{
+  "appBar": {
+    "es": "Spanish",
+    "en": "English"
+  },
+  "snackbar": {
+    "add": "Add Successfull",
+    "edit": "Edited Successfull",
+    "error": "Login Error:",
+    "delete": "Delete Successfull",
+    "editedPass": "Edited Password",
+    "errorShowIP": "Wrong IP or User or Password",
+    "errorAdd": "Couldn't be Added",
+    "errorEdit": "Couldn't be Edited",
+    "errorDelete": "Couldn't be Deleted",
+    "errorApis": "APIS error",
+    "login": {
+      "userNotFound": "User Not Found",
+      "passWrong": "Password Wrong",
+      "disabledUser": "Disabled User"
+    },
+    "user": {
+      "userFound": "Usuario Permitido",
+      "userNotFound": "Usuario No Permitido"
+    }
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "usermng": "User Management",
+    "taskmng": "Task Management",
+    "errmng": "Code Management",
+    "rolemng": "Role Management",
+    "logout": "Log Out"
+  },
+  "errorsRules": {
+    "mandaEmail": "Email is mandatory",
+    "validEmail": "Must be a valid email address",
+    "emailExists": "The email already exists",
+    "mandatory": "Mandatory",
+    "capitalLetter": "Must have at least one capital letter",
+    "lowerLetter": "Must have at least one lowercase letter",
+    "oneNumber": "Must have at least one number",
+    "specialCharacter": "Must have at least one special character",
+    "eightCharacter": "Must have at least 8 characters"
+  },
+  "labels": {
+    "id": "ID",
+    "code": "Code",
+    "description": "Description",
+    "solution": "Solution",
+    "configuration": "Configuration",
+    "role": "Role",
+    "user": "User",
+    "pages": "Pages",
+    "administrator": "Administrator",
+    "technician": "technician",
+    "supervisor": "Supervisor",
+    "taskCode": "Task Code",
+    "task": "Task",
+    "device": "Device",
+    "status": "Status",
+    "assigned_at": "Assigned At",
+    "errorCode": "Error Code",
+    "created_at": "Created at",
+    "finished_at": "Finished at",
+    "comments": "Comments",
+    "completed": "Completed",
+    "in_process": "In Process",
+    "pending": "Pending",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "havePass": "Has a Password",
+    "noHavePass": "No Password",
+    "changePass": "Change Password For: ",
+    "language": "Language",
+    "loading": "Loading... Please wait",
+    "findError": "Find Error"
+  },
+  "title": {
+    "errorManagment": "Code Management",
+    "visiblePages": "Visible Pages",
+    "dashboard": "Dashboard",
+    "usermng": "User Management",
+    "taskmng": "Task Management",
+    "errmng": "Code Management",
+    "rolemng": "Role Management",
+    "taskManager": "Task Manager",
+    "logout": "Log Out",
+    "add": "Add",
+    "change": "Change",
+    "delete": "Delete",
+    "taskSystem": "Task System"
+  },
+  "buttons": {
+    "send": "Send",
+    "search": "Search",
+    "add": "Add",
+    "copy": "Copy",
+    "change": "Change",
+    "changePass": "Change Password",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "clear": "Clear",
+    "login": "Enter",
+    "yes": "YES",
+    "not": "NO"
+  },
+  "checkBoxes": {
+    "showLink": "Enlaces",
+    "showTimeBar": "Barra Tiempo",
+    "ShowRajant": "Nodo Breadcrumb",
+    "showPMPSM": "Módulo Suscriptor",
+    "showPMPAP": "Módulo AP",
+    "showNames": "Mostrar Nombres",
+    "showAll": "Mostrar Todo",
+    "hideAll": "Ocultar Todo"
+  }
+}

@@ -1,0 +1,66 @@
+body {
+  min-height: 100vh;
+  color: rgb(255, 255, 255);
+  background: rgba(24, 24, 40, 1);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.v-table {
+  background-color: #242433 !important;
+}
+.v-data-table thead {
+  background-color: rgba(24, 24, 40, 1) !important;
+}
+.errorSheet .v-table {
+  background-color: #2d2d3d !important;
+}
+.errorSheet .v-data-table thead {
+  background-color: #242433 !important;
+}
+.v-main {
+  background: rgba(24, 24, 40, 1);
+  color: white;
+}
+
+.LoginTittle{
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.dialogSheet{
+  border-radius: 20px !important;
+  background-color: rgba(24,24,40,1) !important;
+}
+
+.titleProject{
+  font-size: clamp(0.5rem, 3vw, 1.7rem);
+  font-weight: bold;
+}
+
+.titleDialogs{
+  font-size: clamp(1.2em, 3vw, 1.8rem);
+  font-weight: bold;
+}
+
+.roleTable tr th:nth-child(3){
+  min-width: 300px;
+}

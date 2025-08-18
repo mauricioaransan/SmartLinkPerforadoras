@@ -1,0 +1,119 @@
+{
+  "appBar": {
+    "es": "Español",
+    "en": "Inglés"
+  },
+  "snackbar": {
+    "add": "Agregado Exitosamente",
+    "edit": "Editado Exitosamente",
+    "error": "Error en el Login:",
+    "delete": "Eliminado Exitosamente",
+    "editedPass": "Contraseña Editada",
+    "errorShowIP": "IP o Usuario O Contraseña Incorrectos",
+    "errorAdd": "No se pudo Agregar",
+    "errorEdit": "No se pudo Editar",
+    "errorDelete": "No se pudo Eliminar",
+    "errorApis": "Error en las APIS",
+    "login": {
+      "userNotFound": "Usuario no encontrado",
+      "passWrong": "Contraseña Incorrecta",
+      "disabledUser": "Usuario Deshabilitado"
+    },
+    "user": {
+      "userFound": "Usuario Permitido",
+      "userNotFound": "Usuario No Permitido"
+    }
+  },
+  "sidebar": {
+    "dashboard": "Panel Principal",
+    "usermng": "Gestión de Usuarios",
+    "taskmng": "Gestión de Tareas",
+    "errmng": "Gestión de Códigos",
+    "rolemng": "Gestión de Roles",
+    "logout": "Cerrar Sesión"
+  },
+  "errorsRules": {
+    "mandaEmail": "El Correo Electrónico es Obligatorio",
+    "validEmail": "Debe ser un correo electrónico válido",
+    "emailExists": "El Correo ya Existe",
+    "mandatory": "Obligatorio",
+    "capitalLetter": "Debe tener al menos una letra mayúscula",
+    "lowerLetter": "Debe tener al menos una letra minúscula",
+    "oneNumber": "Debe tener al menos un número",
+    "specialCharacter": "Debe tener al menos un carácter especial",
+    "eightCharacter": "Debe tener al menos 8 caracteres"
+  },
+  "labels": {
+    "id": "ID",
+    "code": "Código",
+    "description": "Descripción",
+    "solution": "Solución",
+    "configuration": "Configuración",
+    "role": "Rol",
+    "user": "Usuario",
+    "pages": "Páginas",
+    "administrator": "Administrador",
+    "technician": "Técnico",
+    "supervisor": "Supervisor",
+    "taskCode": "Código Tarea",
+    "task": "Tarea",
+    "device": "Equipo",
+    "status": "Estado",
+    "assigned_at": "Asignado A",
+    "errorCode": "Código de Error",
+    "created_at": "Creado En",
+    "finished_at": "Finalizado En",
+    "comments": "Comentarios",
+    "completed": "Finalizado",
+    "in_process": "En Proceso",
+    "pending": "Pendiente",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "havePass": "Tiene Contraseña",
+    "noHavePass": "No Tiene Contraseña",
+    "changePass": "Cambiar Contraseña Para: ",
+    "language": "Lenguaje",
+    "loading": "Cargando... Espere Por Favor",
+    "findError": "Buscar Error"
+  },
+  "title": {
+    "errorManagment": "Gestión de Códigos",
+    "visiblePages": "Páginas Visibles",
+    "dashboard": "Panel Principal",
+    "usermng": "Gestión de Usuarios",
+    "taskmng": "Gestión de Tareas",
+    "errmng": "Gestión de Códigos",
+    "rolemng": "Gestión de Roles",
+    "taskManager": "Gestor de Tareas",
+    "logout": "Cerrar Sesión",
+    "add": "Agregar",
+    "change": "Cambiar",
+    "delete": "Eliminar",
+    "taskSystem": "Sistema de Tareas"
+  },
+  "buttons": {
+    "send": "Enviar",
+    "search": "Buscar",
+    "add": "Agregar",
+    "copy": "Copiar",
+    "change": "Cambiar",
+    "changePass": "Cambiar Contraseña",
+    "delete": "Eliminar",
+    "cancel": "Cancelar",
+    "clear": "Limpiar",
+    "login": "Ingresar",
+    "yes": "SI",
+    "not": "NO"
+  },
+  "checkBoxes": {
+    "showLink": "Enlaces",
+    "showTimeBar": "Barra Tiempo",
+    "ShowRajant": "Nodo Breadcrumb",
+    "showPMPSM": "Módulo Suscriptor",
+    "showPMPAP": "Módulo AP",
+    "showNames": "Mostrar Nombres",
+    "showAll": "Mostrar Todo",
+    "hideAll": "Ocultar Todo"
+  }
+}
