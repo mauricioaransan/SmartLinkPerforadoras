@@ -19,13 +19,6 @@
       </v-list>
     </v-navigation-drawer>
     <v-main>
-      <v-sheet class="ma-4 mt-7" color="transparent">
-        <Dashboard v-if="selectedPage === LABELS.dashboard" />
-        <UserManagment v-if="selectedPage === LABELS.usermng" />
-        <HomeworkManagment v-if="selectedPage === LABELS.taskmng" />
-        <ErrorManagment v-if="selectedPage === LABELS.errormng" />
-        <RolManagment v-if="selectedPage === LABELS.rolmng" />
-      </v-sheet>
     </v-main>
   </v-app>
 </template>

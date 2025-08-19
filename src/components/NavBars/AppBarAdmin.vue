@@ -2,7 +2,7 @@
   <v-app-bar :color="COLOR.card">
     <v-row class="ma-4" justify="space-between">
       <v-app-bar-nav-icon class="mt-4"  v-if="mdAndDown" variant="text" @click="showDrawer()" ></v-app-bar-nav-icon>
-      <span v-if="!xs" class="mt-4 titleProject">{{ t('title.taskSystem') }}</span>
+      <span v-if="!xs" class="mt-4 titleProject">{{ t('title.titleSL') }}</span>
       <v-select
         class="pt-5"
         v-model="locale"

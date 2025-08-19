@@ -90,7 +90,8 @@
     "add": "Agregar",
     "change": "Cambiar",
     "delete": "Eliminar",
-    "taskSystem": "Sistema de Tareas"
+    "taskSystem": "Sistema de Tareas",
+    "titleSL": "SmartLink LAOS"
   },
   "buttons": {
     "send": "Enviar",

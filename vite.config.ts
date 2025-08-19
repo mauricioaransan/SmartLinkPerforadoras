@@ -7,7 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-   base: '/GestorDeTareas/',
+   base: '/SmartlinkLAOS/',
   plugins: [vue(), vueDevTools()],
   assetsInclude: ['**/*.ttf', '**/*.woff', '**/*.woff2'], // importante para las fuentes
   resolve: {

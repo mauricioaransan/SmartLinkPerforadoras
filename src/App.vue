@@ -38,7 +38,8 @@ let roleLogged = localStorage.getItem('roleSesion')
 //   // ya que no encontró ningún usuario logeado
 //   router.replace('/login')
 // }
-router.replace('/login')
+// router.replace('/login')
+router.replace('/dashboard')
 </script>
 
 <template>

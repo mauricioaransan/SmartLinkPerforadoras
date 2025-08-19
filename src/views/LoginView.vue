@@ -69,7 +69,7 @@ import { COLOR } from '@/const/colors'
 /********************************
  ********** TYPESCRIPT **********
  *******************************/
-import type { RULES } from '@/types/Rules'
+// import type { RULES } from '@/types/Rules'
 
 /********************************
  *********** SERVICES ***********
@@ -239,8 +239,8 @@ const disabledBTN = computed(() => userEmail.value === '' || userPass.value === 
 /**
  * Reglas de los Emails, para que tengan la estructura de EMAIL
  */
-const emailRules: RULES[] = [
-  (v) => !!v || computed(() => t('errorsRules.mandaEmail')).value,
-  (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || computed(() => t('errorsRules.validEmail')).value,
+const emailRules: any[] = [
+  (v:any) => !!v || computed(() => t('errorsRules.mandaEmail')).value,
+  (v:any) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || computed(() => t('errorsRules.validEmail')).value,
 ]
 </script>

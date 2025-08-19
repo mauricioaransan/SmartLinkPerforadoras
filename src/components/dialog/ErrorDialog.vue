@@ -87,12 +87,12 @@ import { TYPEERRORMSG, TYPEMSG } from '@/const/snackbar'
  ********** TYPESCRIPT **********
  *******************************/
 import type { PropType } from 'vue'
-import type { ERROR } from '@/types/Error'
+// import type { ERROR } from '@/types/Error'
 
 /********************************
  *********** SERVICES ***********
  *******************************/
-import { finalAddError, finalChangeError, finalDeleteError } from '@/services/errorServices'
+// import { finalAddError, finalChangeError, finalDeleteError } from '@/services/errorServices'
 
 /********************************
  ************ I18N **************
@@ -122,7 +122,7 @@ const props = defineProps({
   /**
    * Objeto ERROR
    */
-  objError: { type: Object as PropType<ERROR>, required: true },
+  objError: { type: Object as PropType<any>, required: true },
 })
 
 /**
@@ -192,8 +192,8 @@ async function addError() {
   /**
    * Respuesta del Servicio
    */
-  const statusError = await finalAddError(errorObj.value)
-  await responseAxios(statusError.status, props.typeDialog)
+  // const statusError = await finalAddError(errorObj.value)
+  // await responseAxios(statusError.status, props.typeDialog)
 }
 
 /**
@@ -206,8 +206,8 @@ async function changeError() {
   /**
    * Respuesta del Servicio
    */
-  const statusError = await finalChangeError(errorObj.value)
-  await responseAxios(statusError.status, props.typeDialog)
+  // const statusError = await finalChangeError(errorObj.value)
+  // await responseAxios(statusError.status, props.typeDialog)
 }
 
 /**
@@ -220,8 +220,8 @@ async function deleteError() {
   /**
    * Respuesta del Servicio
    */
-  const statusError = await finalDeleteError(errorObj.value)
-  await responseAxios(statusError.status, props.typeDialog)
+  // const statusError = await finalDeleteError(errorObj.value)
+  // await responseAxios(statusError.status, props.typeDialog)
 }
 
 /**

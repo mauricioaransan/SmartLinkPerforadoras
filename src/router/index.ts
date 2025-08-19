@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 import LoginView from '../views/LoginView.vue'
 import AdminView from '../views/AdminView.vue'
+import DashboardView from '@/views/Dashboard/DashboardView.vue'
 // import TesteView from '../views/TesteView.vue'
 
 const routes = [
@@ -13,6 +14,11 @@ const routes = [
       path: '/login',
       name: 'Login',
       component: LoginView,
+    },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: DashboardView,
     },
     // {
     //   path: '/testeo',
@@ -38,7 +44,8 @@ router.beforeEach((to, from, next) => {
   const exists = routes.some(route => route.path === to.path);
   if (!exists) {
     // Si la ruta no existe, redirigir al menú principal
-    next(`/login`);
+    // next(`/login`);
+    next(`/dashboard`);
 
     // next(`/smartlink/test`);
 

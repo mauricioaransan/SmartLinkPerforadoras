@@ -90,7 +90,8 @@
     "add": "Add",
     "change": "Change",
     "delete": "Delete",
-    "taskSystem": "Task System"
+    "taskSystem": "Task System",
+    "titleSL": "SmartLink LAOS"
   },
   "buttons": {
     "send": "Send",
