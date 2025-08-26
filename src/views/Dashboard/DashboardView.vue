@@ -21,7 +21,7 @@
     </v-sheet>
 
     <v-sheet >
-        <PrincipalPage v-if="showPage === VISIBLE_PAGE_DASHBOARD.showDashboard"/>
+        <PrincipalPage v-if="showpage === VISIBLE_PAGE_DASHBOARD.showDashboard"/>
     </v-sheet>
 </template>
 
@@ -32,9 +32,10 @@ import { VISIBLE_PAGE_DASHBOARD } from '@/const/dashboard';
 import PrincipalPage from '@/components/Dashboard/PrincipalPage.vue';
 import Buttons from '@/components/PrincipalComponents/Buttons.vue';
 
-const showPage = ref('')
+
+const showpage = ref('')
 
 function showPages(visiblePage:string){
-    showPage.value = visiblePage
+    showpage.value = visiblePage
 }
 </script>

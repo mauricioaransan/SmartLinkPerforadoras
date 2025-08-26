@@ -31,3 +31,8 @@ export const APIS_USER = {
   deleteUser: `${finalURL.value}user/deleteUser`,
   changePassUser: `${finalURL.value}user/changePassUser`,
 }
+
+export const APIS_MAPS = {
+  getAllInfoMap: `${finalURL.value}dashboard/getAllInfoMap`,
+  getAllLatency: `${finalURL.value}kpi/getAllLatency`,
+}
