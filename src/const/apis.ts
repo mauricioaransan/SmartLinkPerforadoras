@@ -35,4 +35,16 @@ export const APIS_USER = {
 export const APIS_MAPS = {
   getAllInfoMap: `${finalURL.value}dashboard/getAllInfoMap`,
   getAllLatency: `${finalURL.value}kpi/getAllLatency`,
+  getAllLatLngInfo : `${finalURL.value}dashboard/getAllLatLngInfo`
+}
+
+export const APIS_TOPOLOGY ={
+  getGraphTopo    :   `${finalURL.value}topology/getGraphTopologyData`,
+  getTableTopo    :   `${finalURL.value}topology/getTableTopologyData`,
+  getStatusLog    :   `${finalURL.value}topology/getStatusLogGraph`,
+  getAllTopoData  :   `${finalURL.value}topology/getAllTopologyData`,
+  getSNMPDataByIP :   `${finalURL.value}topology/getSNMPDataByIP`,
+  getAllOperaByIP :   `${finalURL.value}topology/getAllOperabilityByIP`,
+  getAllOpLastDay :   `${finalURL.value}topology/getAllOperabilityLastDay`,
+
 }

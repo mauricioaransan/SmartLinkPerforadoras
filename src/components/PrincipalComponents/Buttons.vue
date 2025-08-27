@@ -71,7 +71,7 @@ const init = () => {
   // Cargar modelo .obj
   const loader = new OBJLoader();
   loader.load(
-    "/SmartlinkLAOS/dodeca_button.obj", // Ajusta la ruta de tu archivo
+    "/SmartlinkRAOS/dodeca_button.obj", // Ajusta la ruta de tu archivo
     (object) => {
       object.scale.set(5, 5, 5);
       object.position.set(0, 0, 0);
