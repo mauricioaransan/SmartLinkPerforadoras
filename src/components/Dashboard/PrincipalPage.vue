@@ -1,10 +1,20 @@
 <template>
-    <div>
-        <h1>Mapa</h1>
-        <v-sheet width="100%">
-            <div ref="mapContainer"></div>
-        </v-sheet>
-    </div>
+    <v-row >
+        <v-col cols="8" >
+            <!-- <div> -->
+                <h1>Mapa</h1>
+                <v-sheet width="100%" color="transparent">
+                    <div ref="mapContainer"></div>
+                </v-sheet>
+            <!-- </div> -->
+        </v-col>
+        <v-col cols="4">
+            <h1>Tabla</h1>
+            <Tabla/>
+        </v-col>
+    </v-row>
+
+    
 
     <MapDialog 
     v-if="showSheet" 
@@ -27,6 +37,8 @@ import axios from 'axios';
 import { APIS_MAPS, APIS_TOPOLOGY } from '@/const/apis';
 import MapDialog from '@/components/dialog/MapDialog.vue';
 import markerImg from "@/assets/perforadora.png";
+import Tabla from '../PrincipalComponents/Tabla.vue';
+
 
 
 const showSheet = ref(false);
@@ -35,6 +47,7 @@ const mouseY = ref(0);
 const finalIP = ref('')
 const finalLatency = ref('');
 const finalUptime = ref('')
+const showMAP = ref(false)
 
 
 const finalTXArray   = ref<any[]>([]);
@@ -156,6 +169,8 @@ async function getAllInfoIntoMap(){
         await setSourceAndLayer('SourceTX',finalTXObject.value,'LayerTX');
         
         await clearLayerSource('LayerRX','SourceRX');
+
+
     })
 }
 
@@ -201,10 +216,8 @@ onMounted(async() => {
         bearing: 30,
         style: 'https://api.maptiler.com/maps/satellite/style.json?key=6JWVt6LFaY22nquimZpF',
     });
-    await getAllOperabilityLastDay();
-    await getAllLatencyLastMinute();
-    await getAllInfoIntoMap();
-    
+    showMAP.value = true;
+
     const img = new Image(80, 80);
 
     img.onload = () => {
@@ -212,6 +225,11 @@ onMounted(async() => {
     };
 
     img.src = markerImg;
+
+    await getAllOperabilityLastDay();
+    await getAllLatencyLastMinute();
+    await getAllInfoIntoMap();
+    
 
 
     map.addControl(new maplibregl.NavigationControl());

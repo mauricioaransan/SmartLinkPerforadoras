@@ -1,7 +1,7 @@
 <template>
-  <v-app-bar :color="COLOR.card">
-    <v-row class="ma-4" justify="space-between">
-      <v-app-bar-nav-icon class="mt-4"  v-if="mdAndDown" variant="text" @click="showDrawer()" ></v-app-bar-nav-icon>
+  <!-- <v-app-bar :color="COLOR.card"> -->
+    <v-row class="ma-0 ml-4 mr-4" justify="space-between">
+      <!-- <v-app-bar-nav-icon class="mt-4"  v-if="mdAndDown" variant="text" @click="showDrawer()" ></v-app-bar-nav-icon> -->
       <span v-if="!xs" class="mt-4 titleProject">{{ t('title.titleSL') }}</span>
       <v-select
         class="pt-5"
@@ -15,7 +15,7 @@
         :max-width="xs ? 90 : 130"
       />
     </v-row>
-  </v-app-bar>
+  <!-- </v-app-bar> -->
 </template>
 
 <script lang="ts" setup>

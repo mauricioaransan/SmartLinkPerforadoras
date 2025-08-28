@@ -43,6 +43,8 @@ router.replace('/dashboard')
 </script>
 
 <template>
+  
+
   <RouterView />
   <div>
     <Snackbar />
