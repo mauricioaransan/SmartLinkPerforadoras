@@ -6,9 +6,9 @@
       <v-sheet color="transparent"  style="align-self: center;">
         <v-row class="ma-0" justify="space-around">
             <Buttons :colorDodecaedro="'red'" :title="'Dashboard'" :colorCard="'blue'" :colorText="'white'" @click="showPages(VISIBLE_PAGE_DASHBOARD.showDashboard)" />
-            <Buttons :colorDodecaedro="'blue'" :title="'Dashboard'" :colorCard="'blue'" :colorText="'white'" @click="showPages(VISIBLE_PAGE_DASHBOARD.showTest)" />
-            <Buttons :colorDodecaedro="'orange'" :title="'Dashboard'" :colorCard="'blue'" :colorText="'white'" @click="showPages(VISIBLE_PAGE_DASHBOARD.showTest)" />
-            <Buttons :colorDodecaedro="'purple'" :title="'Dashboard'" :colorCard="'blue'" :colorText="'white'" @click="showPages(VISIBLE_PAGE_DASHBOARD.showTest)" />
+            <Buttons :colorDodecaedro="'blue'" :title="'Menu2'" :colorCard="'blue'" :colorText="'white'" @click="showPages(VISIBLE_PAGE_DASHBOARD.showTest)" />
+            <Buttons :colorDodecaedro="'orange'" :title="'Menu3'" :colorCard="'blue'" :colorText="'white'" @click="showPages(VISIBLE_PAGE_DASHBOARD.showTest)" />
+            <Buttons :colorDodecaedro="'purple'" :title="'Menu4'" :colorCard="'blue'" :colorText="'white'" @click="showPages(VISIBLE_PAGE_DASHBOARD.showTest)" />
            
         </v-row>
     </v-sheet>

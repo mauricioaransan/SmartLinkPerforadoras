@@ -35,7 +35,8 @@ export const APIS_USER = {
 export const APIS_MAPS = {
   getAllInfoMap: `${finalURL.value}dashboard/getAllInfoMap`,
   getAllLatency: `${finalURL.value}kpi/getAllLatency`,
-  getAllLatLngInfo : `${finalURL.value}dashboard/getAllLatLngInfo`
+  getAllLatLngInfo : `${finalURL.value}dashboard/getAllLatLngInfo`,
+  getAllBandWidth : `${finalURL.value}dashboard/getAllBandWidth`,
 }
 
 export const APIS_TOPOLOGY ={
