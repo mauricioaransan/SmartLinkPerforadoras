@@ -56,7 +56,7 @@ const headers = [
     },
     {
       name: 'RD044',
-      user: 2,
+      user: 0,
       status: 'alarm',
       eficency: 89
     },
@@ -79,7 +79,7 @@ const headers = [
 const finalUsers = ref([])
 
 function showUserInTable(idTable:number){
-  let userFind = ''
+  let userFind = 'Sin Usuario'
   finalUsers.value.filter(({id,name})=>{
     if(id === idTable) userFind = name
   })

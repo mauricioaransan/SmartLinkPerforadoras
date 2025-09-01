@@ -23,7 +23,7 @@
     style="position: fixed; z-index: 9;" 
     :hexaTitle1="finalBandWidth"
     :hexaTitle2="`${finalLatency}ms`"
-    :hexaTitle3="'0.3%'"
+    :hexaTitle3="finalLost"
     :hexaTitle4="finalUptime"
     :ip="finalIP"
     />
@@ -48,6 +48,7 @@ const finalIP = ref('')
 const finalLatency = ref('');
 const finalUptime = ref('');
 const finalBandWidth = ref('');
+const finalLost = ref('')
 const showMAP = ref(false)
 
 
@@ -57,12 +58,12 @@ const finalTXObject   = ref<any>({'features': [], "type": ''});
 let map: maplibregl.Map;
 const mapContainer = ref<HTMLDivElement | null>(null);
 
-const postPORTItems = async (tipo:string, latitud:number, longitud:number, color:string, valor:string, index:number, fecha:string, uptime:string, latency: string, ip: string, bandwidth: string) => {
+const postPORTItems = async (tipo:string, latitud:number, longitud:number, color:string, valor:string, index:number, fecha:string, uptime:string, latency: string, ip: string, bandwidth: string, lost:string, name:string) => {
     let finalITEM = {                        
             "type": "Feature",
             "properties": {
                 "level": 0,
-                "name": `AllGraph${tipo}`,
+                "name": name,
                 "height": 40,
                 "base_height": 0,
                 "color": color,
@@ -72,6 +73,7 @@ const postPORTItems = async (tipo:string, latitud:number, longitud:number, color
                 "uptime": uptime,
                 "latency": latency,
                 "bandwidth": bandwidth,
+                "lost": lost,
                 "ip": ip
             },
             "geometry": {
@@ -93,7 +95,15 @@ const setSourceAndLayer = async (source:string, alldata:any, layer:string) => {
             'type': 'symbol',
             'source': source,
             'layout':{
-                 'icon-image': 'custom-marker'
+                 'icon-image': 'custom-marker',
+                 "text-field": ["get", "name"],  // toma el campo "title" de tu GeoJSON
+                "text-font": ["Open Sans Bold"],
+                "text-size": 12,
+                "text-offset": [0, 3.5], // desplaza el texto debajo del icono
+                "text-anchor": "top"
+            },
+            paint: {
+                "text-color": "#FFFFFF"
             }
         });
 
@@ -116,6 +126,7 @@ const setSourceAndLayer = async (source:string, alldata:any, layer:string) => {
             finalLatency.value = `${e.features[0].properties.latency}`;
             finalUptime.value = `${e.features[0].properties.uptime}`;
             finalBandWidth.value = `${e.features[0].properties.bandwidth}`;
+            finalLost.value = `${e.features[0].properties.lost}`;
         });
 
         map.on('mouseleave', layer, () => {
@@ -124,6 +135,7 @@ const setSourceAndLayer = async (source:string, alldata:any, layer:string) => {
             finalLatency.value = ``;
             finalUptime.value = ``;
             finalBandWidth.value = ``;
+            finalLost.value = ``;
         });
     }
 }
@@ -151,6 +163,8 @@ async function getAllInfoIntoMap(){
                 uptime: finalITEMS.value[item.ip].uptime,
                 latency : finalITEMS.value[item.ip].latency,
                 bandwidth : finalITEMS.value[item.ip].bandwidth,
+                lost : finalITEMS.value[item.ip].lost,
+                name : finalITEMS.value[item.ip].name,
                 latitud: item.latitud,
                 longitud: item.longitud,
                 fecha: item.fecha
@@ -165,13 +179,14 @@ async function getAllInfoIntoMap(){
 
             const finalLatitud = item.latitud??(-12.1080877+lat);
             const finalLongitud = item.longitud??(-76.974010+lng);
-            const finalBandWidth = item.bandwidth??0
-            const finalLatency = item.latency??0
+            const finalEBandWidth = item.bandwidth??0
+            const finalELatency = item.latency??0
+            const finalELost = item.lost??0
 
             lat+=0.0011;
             lng+=0.0011;
 
-            postPORTItems('TX', finalLatitud, finalLongitud, ``, `IP: ${ip}`,1,`${item.fecha}`,`${item.uptime}`,`${finalLatency}`,`${item.ip}`, `${finalBandWidth}`);
+            postPORTItems('TX', finalLatitud, finalLongitud, ``, `IP: ${ip}`,1,`${item.fecha}`,`${item.uptime}`,`${finalELatency}`,`${item.ip}`, `${finalEBandWidth}`,`${finalELost}`, item.name);
         });
 
         finalTXObject.value = { "features" : finalTXArray.value, type : "FeatureCollection" };
@@ -189,17 +204,24 @@ async function  getAllOperabilityLastDay() {
     await axios.get(APIS_TOPOLOGY.getAllOpLastDay).then((response) => {
         const items = response.data;
         items.forEach((item:any) => {
-            const total = item.ok + item.alert + item.alarm + item.down;
-            const uptime = `${(((item.ok + item.alert + item.alarm) / total)*100).toFixed(2)}%`;
+            const totalUptime = item.ok + item.alert + item.alarm + item.down;
+            const uptime = `${(((item.ok + item.alert + item.alarm) / totalUptime)*100).toFixed(2)}%`;
+
+            const NotDown = item.ok + item.alert + item.alarm ;
+            const lost = `${((item.down / NotDown)*100).toFixed(2)}%`
 
             if(!finalITEMS.value[item.ip]) {
                 finalITEMS.value[item.ip] = {}
             }
             finalITEMS.value[item.ip] = {
                 ip: item.ip,
+                name: item.name,
                 uptime : uptime,
+                lost : lost
             }
         })
+
+        // console.log(finalITEMS.value)
     })
 }
 
@@ -209,7 +231,9 @@ async function  getAllLatencyLastMinute() {
         items.forEach((item:any) => {
             finalITEMS.value[item.ip] = {
                 ip: finalITEMS.value[item.ip].ip,
+                name: finalITEMS.value[item.ip].name,
                 uptime: finalITEMS.value[item.ip].uptime,
+                lost: finalITEMS.value[item.ip].lost,
                 latency : item.latencia.toFixed(2)
             }
         })
@@ -225,8 +249,10 @@ async function  getAllBandWidth() {
             finalITEMS.value[item.ip] = {
                 ip: finalITEMS.value[item.ip].ip,
                 uptime: finalITEMS.value[item.ip].uptime,
+                name: finalITEMS.value[item.ip].name,
                 latency: finalITEMS.value[item.ip].latency,
-                bandwidth : finalBandWidth.Rx
+                lost: finalITEMS.value[item.ip].lost,
+                bandwidth : finalBandWidth.Rx,
             }
         })
     })
