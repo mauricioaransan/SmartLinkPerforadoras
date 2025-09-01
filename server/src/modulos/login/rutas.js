@@ -1,15 +1,20 @@
 const express = require("express");
+
+const respuesta = require("../../red/respuestas");
 const controlador = require("./controlador");
 
 const router = express.Router();
 
-router.post("/userLogin", userLogin);
+router.get("/", getUserLogin);
 
-//Call in PREDICTSNRVIEW
-async function userLogin(req, res, next) {
-  const user = req.body;
+//get All data from LTE Table
+async function getUserLogin(req, res, next) {
   try {
-    await controlador.userLogin(res, user);
+    const items = await controlador.getUserLogin(
+      req.query.user,
+      req.query.pass
+    );
+    respuesta.success(req, res, items, 200);
   } catch (error) {
     next(error);
   }

@@ -1,9 +1,9 @@
-const db = require("../../DB/mysql");
+const db = require('../../DB/mysql');
 
-function userLogin(res, user) {
-  return db.userLogin(res, user);
+function getUserLogin(user,pass){
+    return db.getUserLogin(user,pass);
 }
 
 module.exports = {
-  userLogin,
-};
+    getUserLogin,
+}

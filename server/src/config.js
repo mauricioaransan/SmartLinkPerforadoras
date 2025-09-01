@@ -8,6 +8,6 @@ module.exports = {
     host: process.env.MYSQL_HOST || "localhost",
     user: process.env.MYSQL_USER || "admin",
     password: process.env.MYSQL_PASS || "audio2023",
-    database: process.env.MYSQL_DB || "gestor_tareas",
+    database: process.env.MYSQL_DB || "smartlinkDB",
   },
 };
