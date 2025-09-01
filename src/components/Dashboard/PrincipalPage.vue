@@ -1,5 +1,5 @@
 <template>
-    <v-row >
+    <v-row class="ma-0">
         <v-col cols="8" >
             <!-- <div> -->
                 <h1>Mapa</h1>
@@ -85,7 +85,6 @@ const postPORTItems = async (tipo:string, latitud:number, longitud:number, color
 }
 
 const setSourceAndLayer = async (source:string, alldata:any, layer:string) => {
-    console.log(finalTXArray.value)
     const mySource = map.getSource(source);
     if(mySource === undefined){ 
         map.addSource(source, { 'type': 'geojson', 'data': alldata});
